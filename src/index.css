@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: rgba(163, 143, 82, 1);
+  --color-fade: rgba(157, 157, 157, 1);
+  --color-base-text: rgba(24, 26, 25, 1);
+  --color-solid-white: rgba(255, 255, 255, 1);
+  --color-light-yellow: rgba(248, 245, 240, 1);
+  --color-border: rgba(232, 232, 232, 1);
+  --font-face-primary-font: DM Sans, sans-serif;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  animation: scroll 50s linear infinite;
+  width: 200%;
+}
+
+.hovereffect{
+  @apply text-baseText no-underline before:block before:absolute before:w-full before:h-1 before:rounded before:bg-fade before:bottom-0 before:left-0 before:scale-x-0 before:origin-right before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100 h-7
+}
