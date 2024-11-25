@@ -1,10 +1,10 @@
-import albumone from "../assets/album1.png";
-import albumtwo from "../assets/album2.png";
+import albumone from "../assets/album1.jpg";
+import albumtwo from "../assets/album2.jpg";
 import albumthree from "../assets/album3.png";
 import albumfour from "../assets/album4.png";
 import albumfive from "../assets/album5.png";
 import albumfsix from "../assets/album6.png";
-import alubmphoneimg1 from "../assets/Albumphoneimg1.png";
+import alubmphoneimg1 from "../assets/albumPhone1.jpg";
 import alubmphoneimg2 from "../assets/albumphoneimg2.png";
 import alubmphoneimg3 from "../assets/albumphoneimg3.png";
 import alubmphoneimg4 from "../assets/albumphoneimg4.png";
@@ -29,29 +29,29 @@ export const Albums = () => {
           tranquil charm.
         </p>
       </div>
-      <div className="flex gap-2 justify-center pt-8 sm:flex sm375:hidden">
+      <div className="flex gap-2 justify-center pt-8 sm:flex sm375:hidden sm:flex-wrap">
         <div className="flex flex-col gap-2">
-          <div>
-            <img src={albumone} alt="" />
+          <div className="w-[491px] h-[328px]">
+            <img src={albumone} alt="" className="size-full object cover" />
           </div>
-          <div>
-            <img src={albumtwo} alt="" />
+          <div className="w-[491px] h-[328px]">
+            <img src={albumtwo} alt="" className="size-full object cover" />
           </div>
         </div>
         <div className="flex flex-col gap-2">
-          <div>
-            <img src={albumthree} alt="" />
+          <div className="w-[288px] h-[195px]">
+            <img src={albumthree} alt="" className="size-full object cover" />
           </div>
-          <div>
-            <img src={albumfour} alt="" />
+          <div className="w-[288px] h-[462px]">
+            <img src={albumfour} alt="" className="size-full object-cover" />
           </div>
         </div>
         <div className="flex flex-col gap-2">
-          <div>
+          <div className="w-[389px] h-[443px]">
             <img src={albumfive} alt="" />
           </div>
-          <div>
-            <img src={albumfsix} alt="" />
+          <div className="w-[389px] h-[214px]">
+            <img src={albumfsix} alt="" className="size-full object-cover"/>
           </div>
         </div>
       </div>

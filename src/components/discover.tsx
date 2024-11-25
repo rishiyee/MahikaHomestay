@@ -1,8 +1,8 @@
-import pookodeLake from "../assets/Pookode Lake.png";
-import karappuzhaDam from "../assets/Karappuzha Dam.png";
-import kuruvaIsland from "../assets/Kuruva Island.png";
-import ancientJainTemple from "../assets/Ancient Jain Temple.png";
-import bandipurPark from "../assets/Bandipur Park.png";
+import pookodeLake from "../assets/pookodeLake.jpg";
+import karappuzhaDam from "../assets/karapakam.jpg";
+import kuruvaIsland from "../assets/kuruvaIsland.jpg";
+import ancientJainTemple from "../assets/jainTemple.jpg";
+import bandipurPark from "../assets/Bandipur.jpg";
 interface PlacesProp{
   image?: string;
   text?: string;
@@ -21,7 +21,7 @@ export const Discover = () => {
         </p>
       </div>
       
-      <div className="flex gap-4 justify-center sm:flex-row sm375:flex-col sm375:w-full">
+      <div className="flex gap-4 justify-center sm:flex-row sm375:flex-col sm375:w-full sm:flex-wrap">
         <Places image={pookodeLake} text="Pookode Lake" />
         <Places image={karappuzhaDam} text="Karappuzha Dam" />
         <Places image={kuruvaIsland} text="Kuruva Island" />
@@ -35,7 +35,7 @@ export const Discover = () => {
 export const Places = ({ image, text}:PlacesProp) => {
   return (
     <div className="flex flex-col gap-2">
-      <div className="sm:w-52 sm:h-56 sm375:h-54">
+      <div className="sm:h-56 sm375:h-[214px] sm:w-[200px] sm375:w-full">
         <img src={image} alt="" className="size-full object-cover" />
       </div>
       <span className="text base text-baseText font-normal font-dmSans">{text}</span>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import mail from "../assets/Mail outline.svg";
 import phone from "../assets/Phone.svg";
 import address from "../assets/Location city.svg";
+import { direction } from "./link-items";
 
 interface FormData {
   firstName: string;
@@ -22,7 +23,6 @@ interface FormErrors {
 
 interface TextFieldProps {
   label?: string;
-  description?: string;
   varient?: string;
   value?: string;
   onChange?: (
@@ -39,7 +39,7 @@ export const Contact = () => {
     email: "",
     phoneNumber: "",
     message: "",
-    updates: false,
+    updates: true,
   });
 
   const [errors, setErrors] = useState<FormErrors>({
@@ -110,14 +110,17 @@ export const Contact = () => {
     `;
 
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappNumber = "918281933492";
+    const whatsappNumber = "919539726563";
     window.location.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
   };
 
   return (
-    <div className="sm:py-24 flex sm:flex-row sm375:flex-col sm375:py-14 sm375:px-4">
+    <div
+      className="sm:py-24 flex sm:flex-row sm375:flex-col sm375:py-14 sm375:px-4 sm:flex-wrap"
+      id="contact"
+    >
       <div className="sm:px-32 flex flex-col sm:gap-24 flex-1 sm375:gap-11">
-        <div>
+        <div className="flex flex-col sm:gap-4 sm375:gap-2">
           <p className="text-fade font-dmSans font-normal text-base">
             CONTACT US
           </p>
@@ -139,9 +142,12 @@ export const Contact = () => {
               <span className="text-lg font-dmSans text-baseText font-normal">
                 Gmail
               </span>
-              <span className="text-base text-baseText font-dmSans font-normal">
+              <a
+                href="mailto:hello@mahimakahomestay.com"
+                className="text-base text-baseText font-dmSans font-normal"
+              >
                 hello@mahimakahomestay.com
-              </span>
+              </a>
             </div>
           </div>
           <div className="px-6 py-3 flex gap-3 items-center">
@@ -152,9 +158,12 @@ export const Contact = () => {
               <span className="text-lg font-dmSans text-baseText font-normal">
                 Phone
               </span>
-              <span className="text-base text-baseText font-dmSans font-normal">
-                +91 8547838091
-              </span>
+              <a
+                className="text-base text-baseText font-dmSans font-normal"
+                href="tel:+91 9539 7265 63"
+              >
+                +91 9539 7265 63
+              </a>
             </div>
           </div>
           <div className="px-6 py-3 flex gap-3 items-center">
@@ -162,23 +171,25 @@ export const Contact = () => {
               <img src={address} alt="Address Icon" />
             </div>
             <div className="flex flex-col">
+                <a href={direction}>
               <span className="text-lg font-dmSans text-baseText font-normal">
                 Address
               </span>
               <span className="text-base text-baseText font-dmSans font-normal">
-                Mahika Homestay, Eranelloor, Panamaram PO, Wayand, Kerala
+                  Mahika Homestay, Eranelloor, Panamaram PO, Wayand, Kerala
               </span>
+                </a>
             </div>
           </div>
         </div>
       </div>
-      <div className="sm:px-32 flex-1">
+      <div className="sm:px-32 flex-1" id="booking">
         <div className="sm:p-14 border flex flex-col sm:gap-8 rounded-2xl sm375:py-14 sm375:px-4 sm375:gap-4">
           <h2 className="text-baseText font-dmSans font-normal text-xl">
             Submit the form, and our team will get in touch with you shortly.
           </h2>
-          <div>
-            <div className="flex gap-2.5">
+          <div className="flex flex-col gap-4">
+            <div className="flex gap-3.5 items-center">
               <TextField
                 label="First Name"
                 value={formData.firstName}
@@ -256,20 +267,22 @@ export const TextField = ({
     <div className="flex flex-col gap-2">
       <label
         htmlFor={name}
-        className="text-fade font-dmSans font-normal text-xs"
+        className={`text-fade font-dmSans font-normal text-xs ${
+          error && "text-red-500"
+        }`}
       >
         {label}
       </label>
       <input
         type="text"
         className={`w-full border px-5 py-2.5 rounded ${
-          varient === "big" ? "h-16" : ""
-        }`}
+          error && "border-red-500"
+        }${varient === "big" ? `h-16 ${error && "border-red-500"}` : ""}`}
         value={value}
         onChange={onChange}
         name={name}
       />
-      {error && <span className="text-xs text-red-500">{error}</span>}
+     
     </div>
   );
 };

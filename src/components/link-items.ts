@@ -1,0 +1,1 @@
+export const direction = "https://maps.app.goo.gl/mNZu4LxCKJj43KTT8";

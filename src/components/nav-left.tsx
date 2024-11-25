@@ -1,13 +1,15 @@
+
 export const NavLeft = () => {
+  
   return (
     <div className="flex gap-8 text-baseText font-dmSans font-normal text-base">
-      <a href="" className="hovereffect">
+      <a href="1">
         Gallery
       </a>
-      <a href="" className="">
+      <a href="#aboutus" className="scroll-smooth">
         About us
       </a>
-      <a href="">Home</a>
+      <a href="#home">Home</a>
     </div>
   );
 };

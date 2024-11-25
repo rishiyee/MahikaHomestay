@@ -1,5 +1,6 @@
 import map from "../assets/map.png";
 import arrow from "../assets/Vector.svg";
+import { direction } from "./link-items";
 
 export const Direction = () => {
   return (
@@ -20,12 +21,12 @@ export const Direction = () => {
           <div>
             <img src={arrow} alt="" />
           </div>
-          <p className="text-primary font-dmSans font-normal text-base ">
+          <a className="text-primary font-dmSans font-normal text-base block" href={direction} target="_blank">
             Get Direction
-          </p>
+          </a>
         </div>
       </div>
-      <div className="flex-1">
+      <div className="flex-1" >
         <img src={map} alt="" className="w-full" />
       </div>
     </div>

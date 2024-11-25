@@ -16,10 +16,12 @@ export default {
         solid: "var(--color-solid-white)",
         lightYellow: "var( --color-light-yellow)",
         border: "var(--color-border)",
+        footerBg: "var(--color-footer-bg)",
+        footerBorder: "var(--color-footer-border)",
       },
-      screens:{
-        sm375:'375px'
-      }
+      screens: {
+        sm375: "300px",
+      },
     },
   },
   plugins: [],
