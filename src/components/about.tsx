@@ -2,7 +2,7 @@ import arrow from "../assets/Vector.svg";
 
 export const About = () => {
   return (
-    <div className="sm:px-24 sm:py-28 sm:bg-about sm:bg-no-repeat sm:bg-center flex flex-col sm375:px-4 sm375:py-14" id="aboutus">
+    <div className="sm:px-24 sm:py-28 sm:bg-about sm:bg-no-repeat sm:bg-center flex flex-col sm375:px-4 sm375:py-14 sm375:bg-about sm375:bg-contain sm375:bg-no-repeat sm:bg-contain" id="aboutus">
       <p className="text-center sm:text-base text-fade font-dmSans sm375:text-sm ">
         ABOUT US
       </p>

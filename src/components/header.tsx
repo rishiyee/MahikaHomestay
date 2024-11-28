@@ -2,7 +2,7 @@ import { NavLeft } from "./nav-left";
 import MahikaLogo from "../assets/mahika-logo.svg";
 import { NavRight } from "./nav-right";
 import phoneimg from "../assets/Callimg.svg";
-import mailimg from "../assets/Mail Button.svg";
+import whatappimg from "../assets/whatapp.svg";
 import menuicon from "../assets/menuicon.svg";
 import closeIcon from "../assets/closeIcon.svg";
 import phoneLogo from "../assets/phoneLogo.svg";
@@ -12,16 +12,15 @@ type Props = {
   setMenuPanel?: (value: boolean) => void;
 };
 export const Header = () => {
+  
+
   return (
     <>
       <div className="flex px-32 py-6 justify-between items-center sm375:hidden sm:flex scroll-smooth sticky top-0 bg-solid z-10">
         <NavLeft />
         <div className="">
           <a href="#home">
-            <img
-              src={MahikaLogo}
-              alt="Mahika Logo"
-            />
+            <img src={MahikaLogo} alt="Mahika Logo" />
           </a>
         </div>
         <NavRight />
@@ -33,6 +32,13 @@ export const Header = () => {
 
 export const PhoneVeiw = () => {
   const [menuPanel, setMenuPanel] = useState(false);
+  const whatappMessageHandle = () => {
+    const whatsappMessage =
+      "Hi, I'm interested in learning more about Mahika Homestay. Could you please share details about availability, pricing, and amenities? Thank you!";
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappNumber = "919539726563";
+    window.location.href = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  };
 
   return (
     <div className="sm:hidden sticky top-0 z-10">
@@ -45,10 +51,10 @@ export const PhoneVeiw = () => {
         <button className="px-5 py-1 bg-solid font-dmSans font-normal rounded-full">
           <a href="#booking">Book Now</a>
         </button>
-        <div>
-          <a href="mailto:hello@mahimakahomestay.com">
-            <img src={mailimg} alt="" />
-          </a>
+        <div className="cursor-pointer" onClick={whatappMessageHandle}>
+          
+            <img src={whatappimg} alt="" />
+          
         </div>
       </div>
       <div className="px-4 py-2 flex justify-between items-center bg-solid">
