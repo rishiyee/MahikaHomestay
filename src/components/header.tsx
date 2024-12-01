@@ -7,21 +7,20 @@ import menuicon from "../assets/menuicon.svg";
 import closeIcon from "../assets/closeIcon.svg";
 import phoneLogo from "../assets/phoneLogo.svg";
 import { useState } from "react";
+import { Link} from "react-router-dom";
 type Props = {
   menuPanel?: boolean;
   setMenuPanel?: (value: boolean) => void;
 };
 export const Header = () => {
-  
-
   return (
     <>
       <div className="flex px-32 py-6 justify-between items-center sm375:hidden sm:flex scroll-smooth sticky top-0 bg-solid z-10">
         <NavLeft />
         <div className="">
-          <a href="#home">
+          <Link to="/#home">
             <img src={MahikaLogo} alt="Mahika Logo" />
-          </a>
+          </Link>
         </div>
         <NavRight />
       </div>
@@ -44,24 +43,22 @@ export const PhoneVeiw = () => {
     <div className="sm:hidden sticky top-0 z-10">
       <div className="flex justify-between bg-baseText px-4 py-3 items-center">
         <div>
-          <a href="tel:+91 9539 7265 63">
+          <Link to="tel:+91 9539 7265 63">
             <img src={phoneimg} alt="" />
-          </a>
+          </Link>
         </div>
         <button className="px-5 py-1 bg-solid font-dmSans font-normal rounded-full">
-          <a href="#booking">Book Now</a>
+          <Link to="#booking">Book Now</Link>
         </button>
         <div className="cursor-pointer" onClick={whatappMessageHandle}>
-          
-            <img src={whatappimg} alt="" />
-          
+          <img src={whatappimg} alt="" />
         </div>
       </div>
       <div className="px-4 py-2 flex justify-between items-center bg-solid">
         <div className="">
-          <a href="#home">
+          <Link to="#home">
             <img src={phoneLogo} alt="Mahika Logo" />
-          </a>
+          </Link>
         </div>
         <div onClick={() => setMenuPanel(!menuPanel)}>
           {!menuPanel && (
@@ -92,41 +89,41 @@ export const MenuPanel = ({ menuPanel, setMenuPanel }: Props) => {
 export const MenuPanelItems = ({ setMenuPanel }: Props) => {
   return (
     <div className="flex flex-col font-dmSans text-">
-      <a
-        href="#home"
+      <Link
+        to="/#home"
         onClick={() => setMenuPanel?.(false)}
         className="px-2 py-3 text-center border-dotted border-b-2"
       >
         Home
-      </a>
-      <a
-        href="#aboutus"
+      </Link>
+      <Link
+        to="/#aboutus"
         onClick={() => setMenuPanel?.(false)}
         className="px-2 py-3 text-center border-dotted border-b-2"
       >
         About
-      </a>
-      <a
-        href="#gallery"
+      </Link>
+      <Link
+        to="/gallery"
         onClick={() => setMenuPanel?.(false)}
         className="px-2 py-3 text-center border-dotted border-b-2"
       >
         Gallery
-      </a>
-      <a
-        href="#contact"
+      </Link>
+      <Link
+        to="/#contact"
         onClick={() => setMenuPanel?.(false)}
         className="px-2 py-3 text-center border-dotted border-b-2"
       >
         Contact
-      </a>
-      <a
-        href="#booking"
+      </Link>
+      <Link
+        to="/#booking"
         onClick={() => setMenuPanel?.(false)}
         className="px-2 py-3 text-center border-dotted border-b-2"
       >
         Book Now
-      </a>
+      </Link>
     </div>
   );
 };

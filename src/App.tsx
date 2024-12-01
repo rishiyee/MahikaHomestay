@@ -1,24 +1,64 @@
-import { About } from "./components/about";
-import { Albums } from "./components/albums";
-import { Amenties } from "./components/amenties";
-import { ComfortSection } from "./components/comfort-section";
-import { Contact } from "./components/contact";
-import { Direction } from "./components/direction";
-import { Discover } from "./components/discover";
-import { Footer } from "./components/footer";
-import { GoogleReview } from "./components/ggogle-review";
-import { Header } from "./components/header";
-import { HeroSection } from "./components/hero-section";
-import { ImageSection } from "./components/image-section";
-import { InstaPost } from "./components/instagram-posts";
-import { Review } from "./components/reveiw";
-import { RoomDetail } from "./components/room-detail";
-import { SrollSection } from "./components/sroll-image";
+import { useEffect } from "react";
+import {
+  About,
+  Albums,
+  Amenties,
+  Review,
+  ComfortSection,
+  Contact,
+  Direction,
+  Discover,
+  Footer,
+  GoogleReview,
+  Header,
+  HeroSection,
+  ImageSection,
+  RoomDetail,
+  SrollSection,
+  InstaPost,
+  Gallery,
+} from "./components";
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="scroll-smooth">
-      <Header />
+    <Router>
+      <div>
+        <Header />
+        <div>
+          <Routes>
+            <Route path="/" element={<Page />} />
+            <Route path="/gallery" element={<Gallery />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+const Page = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const targetId = location.hash.substring(1);
+    if (targetId) {
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
+  return (
+    <div>
       <HeroSection />
       <SrollSection />
       <About />
@@ -33,9 +73,6 @@ function App() {
       <InstaPost />
       <GoogleReview />
       <Contact />
-      <Footer />
     </div>
   );
-}
-
-export default App;
+};
