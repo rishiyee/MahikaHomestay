@@ -127,3 +127,4 @@ export const MenuPanelItems = ({ setMenuPanel }: Props) => {
     </div>
   );
 };
+
